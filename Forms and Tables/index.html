@@ -72,17 +72,21 @@ button {
   <body>
     <p>This is my page</p>
     <form action="/my-handling-form-page" method="post">
+  <div id="form-errors" role="alert" aria-live="assertive" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;"></div>
   <p>
     <label for="name">Name:</label>
-    <input type="text" id="name" name="user_name" />
+    <input type="text" id="name" name="user_name" required aria-required="true" aria-describedby="name-help" />
+    <div id="name-help">Enter your full name.</div>
   </p>
   <p>
     <label for="mail">Email:</label>
-    <input type="email" id="mail" name="user_email" />
+    <input type="email" id="mail" name="user_email" required aria-required="true" aria-describedby="email-help" />
+    <div id="email-help">We'll only use this to contact you.</div>
   </p>
   <p>
     <label for="msg">Message:</label>
-    <textarea id="msg" name="user_message"></textarea>
+    <textarea id="msg" name="user_message" required aria-required="true" aria-describedby="msg-help"></textarea>
+    <div id="msg-help">Write a short message (max 500 characters).</div>
   </p>
 <p class="button">
   <button type="submit">Send your message</button>
